@@ -1,7 +1,7 @@
 package com.example.hexagonal.board.adapter.output.persistence.repository
 
-import com.example.hexagonal.board.domain.Board
+import com.example.hexagonal.board.adapter.output.BoardJpaEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface BoardRepository: JpaRepository<Board, Long> {
+interface BoardRepository: JpaRepository<BoardJpaEntity, Long> {
 }
