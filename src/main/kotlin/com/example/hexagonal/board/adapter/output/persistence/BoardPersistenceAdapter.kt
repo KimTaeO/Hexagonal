@@ -1,6 +1,5 @@
 package com.example.hexagonal.board.adapter.output.persistence
 
-import com.example.hexagonal.board.adapter.input.web.request.CreateBoardRequest
 import com.example.hexagonal.board.adapter.output.BoardJpaEntity
 import com.example.hexagonal.board.adapter.output.persistence.repository.BoardRepository
 import com.example.hexagonal.board.application.port.output.CreateBoardPort
@@ -13,10 +12,10 @@ import org.springframework.stereotype.Service
 class BoardPersistenceAdapter(
     private val boardRepository: BoardRepository
 ): CreateBoardPort, GetBoardPort {
-    override fun saveBoard(createBoardRequest: CreateBoardRequest) {
-        boardRepository.save(createBoardRequest.toEntity())
+    override fun saveBoard(board: Board) {
+        boardRepository.save(board.toEntity())
     }
 
-    override fun getBoard(id: Long): Board =
-        boardRepository.findByIdOrNull(id)?.toDomain() ?: throw Exception()
+    override fun getBoard(id: Long): BoardJpaEntity? =
+        boardRepository.findByIdOrNull(id)
 }
