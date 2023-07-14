@@ -5,5 +5,5 @@ import com.example.hexagonal.board.domain.Board
 
 
 interface CreateBoardPort {
-    fun saveBoard(board: Board)
+    fun saveBoard(createBoardRequest: CreateBoardRequest)
 }

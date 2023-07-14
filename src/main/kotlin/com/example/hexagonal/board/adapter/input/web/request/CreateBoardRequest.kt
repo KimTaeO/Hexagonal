@@ -7,8 +7,8 @@ class CreateBoardRequest(
     val title: String,
     val content: String
 ) {
-    fun toDomain(): Board =
-        Board(
+    fun toEntity(): BoardJpaEntity =
+        BoardJpaEntity(
             title = this.title,
             content = this.content
         )
