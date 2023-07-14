@@ -1,7 +1,7 @@
 package com.example.hexagonal.board.application.port.input
 
-import com.example.hexagonal.board.adapter.input.web.request.CreateBoardDto
+import com.example.hexagonal.board.adapter.input.web.request.CreateBoardRequest
 
 interface CreateBoardUseCase {
-    fun createBoard(createBoardDto: CreateBoardDto)
+    fun createBoard(createBoardRequest: CreateBoardRequest)
 }

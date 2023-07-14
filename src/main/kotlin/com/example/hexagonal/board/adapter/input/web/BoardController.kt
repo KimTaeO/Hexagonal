@@ -1,6 +1,6 @@
 package com.example.hexagonal.board.adapter.input.web
 
-import com.example.hexagonal.board.adapter.input.web.request.CreateBoardDto
+import com.example.hexagonal.board.adapter.input.web.request.CreateBoardRequest
 import com.example.hexagonal.board.application.port.input.CreateBoardUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -15,8 +15,8 @@ class BoardController(
     private val createBoardUseCase: CreateBoardUseCase
 ) {
     @PostMapping
-    fun createBoard(@RequestBody createBoardDto: CreateBoardDto): ResponseEntity<Void> {
-        createBoardUseCase.createBoard(createBoardDto)
+    fun createBoard(@RequestBody createBoardRequest: CreateBoardRequest): ResponseEntity<Void> {
+        createBoardUseCase.createBoard(createBoardRequest)
         return ResponseEntity(HttpStatus.CREATED)
     }
 }
