@@ -11,7 +11,7 @@ class GetBoard(
     private val getBoardPort: GetBoardPort
 ): GetBoardUseCase {
     override fun getBoard(id: Long): GetBoardResponse {
-        val board = getBoardPort.getBoard(id)
+        val board = getBoardPort.getBoard(id) ?: throw Exception()
         return GetBoardResponse(
             id = board.id,
             title = board.title,
