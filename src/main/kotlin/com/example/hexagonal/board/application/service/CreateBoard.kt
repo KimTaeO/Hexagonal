@@ -11,10 +11,12 @@ class CreateBoard(
     private val createBoardPort: CreateBoardPort
 ): CreateBoardUseCase {
     override fun createBoard(createBoardRequest: CreateBoardRequest) {
-        val board = createBoardRequest.let { Board(
-            title = it.title,
-            content = it.content
-        ) }
+        val board = createBoardRequest.let {
+            Board(
+                title = it.title,
+                content = it.content
+            )
+        }
 
         createBoardPort.saveBoard(board)
     }
