@@ -5,10 +5,4 @@ import com.example.hexagonal.board.domain.Board
 class CreateBoardRequest(
     val title: String,
     val content: String
-) {
-    fun toDomain(): Board =
-        Board(
-            title = this.title,
-            content = this.content
-        )
-}
+)
